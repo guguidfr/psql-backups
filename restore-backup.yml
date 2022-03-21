@@ -1,0 +1,32 @@
+---
+- hosts: bbdd1
+  become: yes
+
+  vars_files:
+    - restore.yml
+
+  tasks:
+    - name: "Exportar backup"
+      copy:
+        src: "{{ archivo }}"
+        dest: "{{ dest }}" 
+
+    - name: "Crear base de datos"
+      postgresql_db:
+        state: present
+        name: "{{ bd }}"
+      become: yes
+      become_user: postgres
+
+    - name: "Restaurar base de datos"
+      postgresql_db:
+        state: restore
+        name: "{{ bd }}"
+        target: "{{ dest }}"
+      become: yes
+      become_user: postgres
+
+    - name: "Eliminar archivo de bakcup"
+      file:
+        path: "{{ dest }}"
+        state: absent

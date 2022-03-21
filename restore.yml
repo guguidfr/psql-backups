@@ -1,0 +1,4 @@
+---
+archivo: /tmp/copias-PSQL/Centos7BBDD1-bdprueba1-2022-03-21-13:08:09.dump.gz # ruta del archivo que quieras restaurar
+dest: /tmp/backup.dump.gz
+bd: ejemplo1
