@@ -1,0 +1,4 @@
+---
+nombre_bbdd: bdprueba1
+guest: /backups-PSQL/
+host: /home/vagrant/copias-PSQL/
