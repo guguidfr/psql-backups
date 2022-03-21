@@ -1,4 +1,4 @@
 ---
-nombre_bbdd: bdprueba1
-guest: /backups-PSQL/
-host: /home/vagrant/copias-PSQL/
+nombre_bbdd: bdprueba1 # nombre de la base de datos de la que quieres crear un backup
+guest: /backups-PSQL/ # carpeta en la que quieres crear las copias en el servidor de base de datos
+host: /home/vagrant/copias-PSQL/ # carpeta en la que quieres guardas las copias de en tu nodo gestor
